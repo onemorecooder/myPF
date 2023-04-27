@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AboutMe from "./components/AboutMe";
+import MainPage from "./components/MainPage";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
+  const [mostrarAboutMe, setMostrarAboutMe] = useState(false);
+
+  const mostrarAboutMeHandler = () => {
+    setMostrarAboutMe(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AnimatePresence>
+        {!mostrarAboutMe && (
+          <motion.div
+            key="MainPage"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            exit={{
+              opacity: 0,
+              y: -50,
+              transition: { ease: "easeOut", duration: 0.3 },
+            }}
+          >
+            <MainPage mostrarAboutMeHandler={mostrarAboutMeHandler} />
+          </motion.div>
+        )}
+        {mostrarAboutMe && (
+          <motion.div
+            key="AboutMe"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <AboutMe />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
