@@ -4,9 +4,9 @@ import "../styles/about.css";
 
 import { FaArrowDown } from "react-icons/fa";
 
-const AboutMe = ({ mostrarExperienceHandler }) => {
+const Experience = ({ mostrarContactHandler }) => {
   const handleButtonClick = () => {
-    mostrarExperienceHandler();
+    mostrarContactHandler();
   };
 
   const glowVariants = {
@@ -19,23 +19,22 @@ const AboutMe = ({ mostrarExperienceHandler }) => {
       opacity: 1,
     },
   };
-
   return (
     <div className="h-screen text-myColor">
       <div className="py-20">
         <h1 className="text-white aboutText max-w-fit text-center m-auto">
-          About me.
+          Experience.
         </h1>
       </div>
 
       <div className="w-screen px-40 ">
         <p className="font-bold">Hola me gustan los trenes:</p>
         <ul className="p-4">
-          <li>- Asdasdasd.</li>
-          <li>- Asdasdasd.</li>
-          <li>- Asdasdasd.</li>
-          <li>- Asdasdasd.</li>
-          <li>- Asdasdasd.</li>
+          <li>- Culo</li>
+          <li>- Culo</li>
+          <li>- Culo</li>
+          <li>- Culo</li>
+          <li>- Culo</li>
         </ul>
       </div>
       <div className="flex flex-col items-center justify-center mt-auto p-10">
@@ -54,4 +53,4 @@ const AboutMe = ({ mostrarExperienceHandler }) => {
   );
 };
 
-export default AboutMe;
+export default Experience;

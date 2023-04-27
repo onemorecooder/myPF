@@ -1,22 +1,28 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-import { FaCss3Alt, FaJs, FaHtml5, FaReact } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaGithub,
+  FaTwitterSquare,
+} from "react-icons/fa";
 
 const Grid = () => {
   return (
     <div className="px-40 py-20">
-      <div class="grid grid-cols-4 gap-4 text-center">
-        <motion.div whileHover={{ scale: 2, color: "blue" }}>
-          <FaCss3Alt className="m-auto w-20 h-20 cursor-pointer" />
+      <div class="flex m-auto w-fit">
+        <motion.div whileHover={{ scale: 1.1, color: "lightgray" }}>
+          <FaLinkedin className="m-auto w-12 h-12 cursor-pointer mx-2" />
         </motion.div>
-        <motion.div whileHover={{ scale: 2, color: "orange" }}>
-          <FaHtml5 className="m-auto w-20 h-20 cursor-pointer" />
+        <motion.div whileHover={{ scale: 1.1, color: "lightgray" }}>
+          <FaInstagram className="m-auto w-12 h-12 cursor-pointer mx-2" />
         </motion.div>
-        <motion.div whileHover={{ scale: 2, color: "yellow" }}>
-          <FaJs className="m-auto w-20 h-20 cursor-pointer" />
+        <motion.div whileHover={{ scale: 1.1, color: "lightgray" }}>
+          <FaGithub className="m-auto w-12 h-12 cursor-pointer mx-2" />
         </motion.div>
-        <motion.div whileHover={{ scale: 2, color: "lightblue" }}>
-          <FaReact className="m-auto w-20 h-20 cursor-pointer" />
+        <motion.div whileHover={{ scale: 1.1, color: "lightgray" }}>
+          <FaTwitterSquare className="m-auto w-12 h-12 cursor-pointer mx-2" />
         </motion.div>
       </div>
     </div>

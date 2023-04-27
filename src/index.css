@@ -8,3 +8,13 @@ body {
   font-family: "Anonymous Pro", monospace !important;
   overflow: hidden;
 }
+
+input[type="text"]::placeholder {
+  color: lightgray;
+  opacity: 0.2;
+}
+
+textarea::placeholder {
+  color: lightgray;
+  opacity: 0.2;
+}

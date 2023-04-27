@@ -3,18 +3,37 @@ import AboutMe from "./components/AboutMe";
 import MainPage from "./components/MainPage";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 
 function App() {
+  const [mostrarMainPage, setMostrarMainPage] = useState(true);
   const [mostrarAboutMe, setMostrarAboutMe] = useState(false);
+  const [mostrarExperience, setMostrarExperience] = useState(false);
+  const [mostrarContact, setMostrarContact] = useState(false);
 
   const mostrarAboutMeHandler = () => {
     setMostrarAboutMe(true);
+    setMostrarMainPage(false);
   };
+
+  const mostrarExperienceHandler = () => {
+    setMostrarAboutMe(false);
+    setMostrarExperience(true);
+    setMostrarMainPage(false);
+  };
+
+  const mostrarContactHandler = () => {
+    setMostrarAboutMe(false);
+    setMostrarExperience(false);
+    setMostrarMainPage(false);
+    setMostrarContact(true);
+  }
 
   return (
     <>
       <AnimatePresence>
-        {!mostrarAboutMe && (
+        {mostrarMainPage && (
           <motion.div
             key="MainPage"
             initial={{ opacity: 0, y: 50 }}
@@ -35,8 +54,40 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
+            exit={{
+              opacity: 0,
+              y: -50,
+              transition: { ease: "easeOut", duration: 0.3 },
+            }}
           >
-            <AboutMe />
+            <AboutMe mostrarExperienceHandler={mostrarExperienceHandler} />
+          </motion.div>
+        )}
+
+        {mostrarExperience && (
+          <motion.div
+            key="Experience"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            exit={{
+              opacity: 0,
+              y: -50,
+              transition: { ease: "easeOut", duration: 0.3 },
+            }}
+          >
+            <Experience mostrarContactHandler={mostrarContactHandler} />
+          </motion.div>
+        )}
+
+        {mostrarContact && (
+          <motion.div
+            key="Contact"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <Contact />
           </motion.div>
         )}
       </AnimatePresence>
