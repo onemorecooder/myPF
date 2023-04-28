@@ -31,7 +31,8 @@ function App() {
   }
 
   return (
-    <>
+    <div className="relative">
+      <div className="bg w-screen h-screen"></div>
       <AnimatePresence>
         {mostrarMainPage && (
           <motion.div
@@ -86,12 +87,17 @@ function App() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
+            exit={{
+              opacity: 0,
+              y: -50,
+              transition: { ease: "easeOut", duration: 0.3 },
+            }}
           >
             <Contact />
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 

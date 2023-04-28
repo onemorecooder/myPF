@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-/* Base */
+
 body {
   font-family: "Anonymous Pro", monospace !important;
   overflow: hidden;
@@ -17,4 +17,17 @@ input[type="text"]::placeholder {
 textarea::placeholder {
   color: lightgray;
   opacity: 0.2;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./images/screen.gif");
+  opacity: 0.2;
+  z-index: -1;
 }
