@@ -20,44 +20,50 @@ const ContactForm = () => {
   };
 
   return (
-    <div class="flex flex-col items-center text-myColor">
-      <h1 class="text-5xl mb-6">Want to connect?</h1>
-      <p class="text-justify max-w-lg mb-10">
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-      </p>
-      <div class="flex flex-col items-center">
+    <div className="grid grid-cols-2 text-myColor h-screen px-40">
+      <div className="p-10">
+        <h1 className="text-5xl mb-6">Want to connect?</h1>
+        <p className="text-justify max-w-lg mb-10">
+          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+          ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+          ipsum Lorem ipsum
+        </p>
+      </div>
+      <div className="p-10 flex flex-col items-center">
         <motion.input
+          autocomplete="off"
           whileFocus="focus"
           variants={glowVariants}
           type="text"
           placeholder="name"
-          class="text-myColor mb-4 px-40 py-4 bg-black border-4 border-myColor text-center capitalize"
+          className="text-myColor mb-4 px-40 py-4 bg-black border-4 border-myColor text-center capitalize w-24rem"
         ></motion.input>
         <motion.input
+          autocomplete="off"
           whileFocus="focus"
           variants={glowVariants}
           type="text"
           placeholder="email"
-          class="text-myColor mb-4 px-40 py-4 bg-black border-4 border-myColor text-center"
+          className="text-myColor mb-4 px-40 py-4 bg-black border-4 border-myColor text-center w-24rem"
         ></motion.input>
 
         <motion.textarea
+          autocomplete="off"
           whileFocus="focus"
           variants={glowVariants}
           type="text"
           placeholder="your message here..."
-          class="text-myColor mb-6 px-40 py-4 bg-black border-4 border-myColor resize-none text-center capitalize"
+          className="text-myColor mb-6 px-40 py-4 bg-black border-4 border-myColor resize-none text-center capitalize w-16rem"
         ></motion.textarea>
 
-        <div class="w-fit">
+        <div className="w-fit">
           <motion.button
             initial="initial"
             whileHover="hover"
             variants={glowVariants}
             href="a"
-            class="text-myColor px-20 py-4 border-double border-4 border-myColor"
+            className="text-myColor px-20 py-4 border-double border-4 border-myColor"
           >
             Send me a message
           </motion.button>

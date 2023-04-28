@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <div className="h-screen text-myColor">
-      <div className="py-20">
+      <div className="pt-20">
         <h1 className="text-white aboutText max-w-fit text-center m-auto">
           Contact.
         </h1>

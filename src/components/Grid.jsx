@@ -10,8 +10,8 @@ import {
 
 const Grid = () => {
   return (
-    <div className="px-40 py-20">
-      <div class="flex m-auto w-fit">
+    <div className="px-40 py-10">
+      <div className="flex m-auto w-fit">
         <motion.div whileHover={{ scale: 1.1, color: "lightgray" }}>
           <FaLinkedin className="m-auto w-12 h-12 cursor-pointer mx-2" />
         </motion.div>
